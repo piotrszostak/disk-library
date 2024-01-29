@@ -13,10 +13,12 @@ class RecordsCollection:
         return self.records
 
     def get(self, id):
-        return self.records[id]
+        record = [record for record in self.all() if record['id'] == id]
+        if record:
+            return record[0]
+        return []
 
     def create(self, data):
-        data.pop("csrf_token")
         self.records.append(data)
 
     def save_all(self):
@@ -24,7 +26,13 @@ class RecordsCollection:
             json.dump(self.records, f)
 
     def update(self, id, data):
-        data.pop("csrf_token")
         self.records[id] = data
+    
+    def delete(self, id):
+        record = self.get(id)
+        if record == []:
+            return False
+        self.records.remove(record)
+        return True
 
-records = RecordsCollection()
+records_colletion = RecordsCollection()
