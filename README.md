@@ -2,8 +2,8 @@
 Application to track the status of your home CD library
 
 ## How to install
-Import modules from requirements.txt
-Launch flask
+- Import modules from requirements.txt
+- Launch flask
 
 ## How to use
 The home page is: `http://127.0.0.1:5000/api/v1.0/records`;
