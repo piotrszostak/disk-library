@@ -12,5 +12,4 @@ In order to display, edit or delete a single disc, use the following path: `http
 ### Technologies used
 - Python
 - Flask & WTForms
-- HTML
-
+- HTML & Jinja
